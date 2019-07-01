@@ -60,7 +60,7 @@
                                             </thead>
                                             <tbody>
                                             <?php 
-                                                $sql = "select * from subcategory order by id desc";
+                                               $sql = "SELECT s.*, c.title as category_title FROM subcategory as s, category as c WHERE s.categoryid=c.id order by id desc";
                                                 $result = mysqli_query($link,$sql) or die(mysqli_error($link));
                                                 $count=1;
                                                 while($row = mysqli_fetch_assoc($result))
